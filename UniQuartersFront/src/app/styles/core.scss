@@ -1,0 +1,13 @@
+@import "variables.scss";
+
+
+body {
+    margin: 0px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $grey-color-light;
+
+}
