@@ -11,3 +11,22 @@ body {
     background-color: $grey-color-light;
 
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b {
+    font-family: $font-family;
+}
+
+a,
+p,
+span,
+input,
+td,
+tr,
+th {
+    font-family: $font-family;
+}
