@@ -6,5 +6,5 @@ export enum RoutePaths{
     CHAMBRE='chambre',
     RESERVATION='reservation',
     GESTION='gestion',
-
+    BLOC='bloc',
 }

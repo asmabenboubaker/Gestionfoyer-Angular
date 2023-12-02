@@ -15,7 +15,7 @@ const routes: Routes = [
     path: '',
     redirectTo: `${RoutePaths.HOME}`, pathMatch: 'full'
   },
-  
+
   {
     path: `${RoutePaths.LOGIN}`,
     component: LoginComponent
@@ -39,6 +39,10 @@ const routes: Routes = [
       {
         path: `${RoutePaths.RESERVATION}`,
         loadChildren: () => import('./features/reservation/reservation.module').then((m) => m.ReservationModule),
+      },
+      {
+        path: `${RoutePaths.BLOC}`,
+        loadChildren: () => import('./features/bloc/bloc.module').then((m) => m.BlocModule),
       }
     ]
   }

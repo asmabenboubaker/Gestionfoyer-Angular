@@ -1,0 +1,15 @@
+<div class="container">
+  <h2 class="title py-4">Gestion Des Blocs
+    <button class="secondary-button" style="float:right"> <!--(click)="Add()">-->
+      <span class="pi pi-plus" aria-hidden="true"></span> Ajouter un Bloc
+    </button>
+  </h2>
+
+  <div class="card p-4">
+    <p-table #dt [value]=""
+             [rowHover]="true" columnResizeMode="expand" [rows]="5" styleClass="p-datatable" [showCurrentPageReport]="true" [paginator]="true"
+             currentPageReportTemplate="{totalRecords} université(s)" [filterDelay]="0">
+    </p-table>
+  </div>
+</div>
+
