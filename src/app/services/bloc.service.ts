@@ -19,6 +19,10 @@ export class BlocService {
     console.log("FETCHING ALL BLOCS service lvl");
     return this._http.get<Bloc[]>(this.apiUrl);
   }
+  getAllBlocs2():Observable<Bloc[]> {
+    console.log("FETCHING ALL BLOCS service lvl");
+    return this._http.get<Bloc[]>(this.apiUrl+"/data");
+  }
   removeUnderscores(obj: any): any {
     const result: any = {};
     for (const key in obj) {
