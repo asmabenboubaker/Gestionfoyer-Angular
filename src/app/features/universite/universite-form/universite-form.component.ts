@@ -41,7 +41,7 @@ export class UniversiteFormComponent implements OnInit {
             console.error('Error fetching data:', error);
           }
 
-          
+
         );
         this.dialogService.close();
         f.reset()
@@ -50,7 +50,7 @@ export class UniversiteFormComponent implements OnInit {
 
     } else {
 
-      this.uniService.addUniversity(this.uni).subscribe((data)=> 
+      this.uniService.addUniversity(this.uni).subscribe((data)=>
         {
           console.log(data)
           this.messageService.add({
@@ -58,8 +58,8 @@ export class UniversiteFormComponent implements OnInit {
             summary: 'Yessss',
             detail: 'Successfully Updated ',
             life: 5000,
-          });      
-        
+          });
+
           this.uniService.getAllUniversites().subscribe(
             (response: any) => {
               this.uniService.data = response.data.universities;
@@ -69,18 +69,13 @@ export class UniversiteFormComponent implements OnInit {
               console.error('Error fetching data:', error);
             }
 
-            
+
           );
 
         }
         );
         this.dialogService.close();
         f.reset()
-
-
-
-     
-
     }
 
 

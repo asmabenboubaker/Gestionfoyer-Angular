@@ -1,15 +1,58 @@
 <div class="container">
   <h2 class="title py-4">Gestion Des Blocs
-    <button class="secondary-button" style="float:right"> <!--(click)="Add()">-->
+    <button class="secondary-button" style="float:right" (click)="Add()"> <!--(click)="Add()">-->
       <span class="pi pi-plus" aria-hidden="true"></span> Ajouter un Bloc
     </button>
   </h2>
 
   <div class="card p-4">
-    <p-table #dt [value]=""
+    <p-table #dt [value]="blocService.data"
              [rowHover]="true" columnResizeMode="expand" [rows]="5" styleClass="p-datatable" [showCurrentPageReport]="true" [paginator]="true"
-             currentPageReportTemplate="{totalRecords} université(s)" [filterDelay]="0">
+             currentPageReportTemplate="{totalRecords} Bloc(s)" [filterDelay]="0">
+      <!--data table header group , includes search bars -->
+      <ng-template pTemplate="headergrouped">
+        <tr class="bg-white">
+          <th>Nom</th>
+          <th>Capactie</th>
+          <th>Actions</th>
+        </tr>
+        <tr class="bg-white">
+          <th>
+              <span class="p-input-icon-right">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" class="p-column-filter" placeholder="Nom">
+              </span>
+          </th>
+          <th>
+              <span class="p-input-icon-right">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" class="p-column-filter" placeholder="Capacite">
+              </span>
+          </th>
+
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-bl>
+        <tr class="p-selectable-row">
+          <td>{{ bl.nom }}</td>
+          <td>{{ bl.capacite }}</td>
+          <!--<td>{{ uni.foyer ? uni.foyer.nom : 'N/A' }}</td>-->
+          <td class="action">
+            <img src="../../../../assets/icon/edit.svg" alt="edit"(click)="Edit(bl.id)">
+            <img src="../../../../assets/icon/trash.svg" alt="trash"(click)="Delete(bl.id)">
+          </td>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td  colspan="4">Aucun bloc trouvé.</td>
+        </tr>
+      </ng-template>
     </p-table>
+    <p-confirmDialog header="Confirmation"></p-confirmDialog>
+    <p-toast></p-toast>
   </div>
 </div>
 
