@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import {Bloc} from "../models/Bloc";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlocService {
   data: Bloc[] = [];
-  apiUrl = 'http://localhost:8080/blocs';
+  /*apiUrl = 'http://localhost:8080/blocs';*/
+  apiUrl = environment.uniQuartersUri + '/blocs';
   constructor(
     private _http: HttpClient
   ) { }
