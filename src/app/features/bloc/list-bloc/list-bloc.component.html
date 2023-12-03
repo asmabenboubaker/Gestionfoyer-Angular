@@ -31,10 +31,17 @@
           </th>
 
         </tr>
+        <tr>
+          <input
+            placeholder = "search"
+            type = "text"
+            [(ngModel)]="nomBloc"
+          />
+        </tr>
       </ng-template>
 
       <ng-template pTemplate="body" let-bl>
-        <tr class="p-selectable-row">
+        <tr class="p-selectable-row" [hidden]="!(bl.nom.toUpperCase().indexOf(nomBloc.toUpperCase()) != -1)">
           <td>{{ bl.nom }}</td>
           <td>{{ bl.capacite }}</td>
           <!--<td>{{ uni.foyer ? uni.foyer.nom : 'N/A' }}</td>-->

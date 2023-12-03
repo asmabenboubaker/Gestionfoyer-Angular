@@ -12,7 +12,7 @@ import {BlocFormComponent} from "../bloc-form/bloc-form.component";
 })
 export class ListBlocComponent {
   @ViewChild('dt') table!: Table;
-
+  nomBloc: string = "";
   constructor(
     public blocService: BlocService,
     private readonly dialogService: DialogService,
