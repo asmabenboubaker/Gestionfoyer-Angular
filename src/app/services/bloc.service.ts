@@ -9,7 +9,7 @@ import {environment} from "../../environments/environment";
 })
 export class BlocService {
   data: Bloc[] = [];
-  /*apiUrl = 'http://localhost:8080/blocs';*/
+  /*apiUrl = 'http://localhost:8082/blocs';*/
   apiUrl = environment.uniQuartersUri + '/blocs';
   constructor(
     private _http: HttpClient

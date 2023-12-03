@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    uniQuartersUri: 'http://localhost:8080'
+    uniQuartersUri: 'http://localhost:8082'
 }
