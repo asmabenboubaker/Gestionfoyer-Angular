@@ -62,4 +62,9 @@ export class BlocService {
  pdfExport():Observable<Blob>{
   return this._http.get("http://localhost:8082/export/pdf", {responseType: 'blob'});
 }
+//Excel
+excelExport():Observable<Blob>{
+  return this._http.get("http://localhost:8082/export-to-excel", {responseType: 'blob'});
+}
+
 }
