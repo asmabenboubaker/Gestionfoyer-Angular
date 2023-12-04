@@ -58,5 +58,8 @@ export class BlocService {
     console.log("FETCHING BLOC BY ID s lvl ::: " + this.apiUrl +"/"+ id);
     return this._http.get<Bloc>(this.apiUrl +"/"+ id);
   }
-
+ //pdf 
+ pdfExport():Observable<Blob>{
+  return this._http.get("http://localhost:8082/export/pdf", {responseType: 'blob'});
+}
 }
