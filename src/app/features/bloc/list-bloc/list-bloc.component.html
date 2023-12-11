@@ -20,6 +20,7 @@
         <tr class="bg-white">
           <th>Nom</th>
           <th>Capactie</th>
+      
           <th>Actions</th>
         </tr>
         <tr class="bg-white">
@@ -35,7 +36,7 @@
                 <input pInputText type="text" class="p-column-filter" placeholder="Capacite">
               </span>
           </th>
-
+          
         </tr>
         <tr>
           <input
@@ -50,7 +51,7 @@
         <tr class="p-selectable-row" [hidden]="!(bl.nom.toUpperCase().indexOf(nomBloc.toUpperCase()) != -1)">
           <td>{{ bl.nom }}</td>
           <td>{{ bl.capacite }}</td>
-          <!--<td>{{ uni.foyer ? uni.foyer.nom : 'N/A' }}</td>-->
+          
           <td class="action">
             <img src="../../../../assets/icon/edit.svg" alt="edit"(click)="Edit(bl.id)">
             <img src="../../../../assets/icon/trash.svg" alt="trash"(click)="Delete(bl.id)">
